@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITB ASIA MALANG</title>
+    <link rel="icon" href="assets/Logo.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- Skip Link for Accessibility -->
+    <a href="#main-content" class="skip-link" style="position: absolute; top: -40px; left: 0; background: var(--accent); color: var(--primary-dark); padding: 8px; z-index: 10000; transition: top 0.3s;">Langsung ke konten utama</a>
+
+    <!-- Header with Icons -->
+    <header>
+        <a href="#" class="logo">
+            <img src="assets/Logo.png" alt="Logo ITB Asia Malang">
+            ITB ASIA MALANG
+        </a>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i>Beranda</a></li>
+                <li><a href="#faculties"><i class="fas fa-graduation-cap"></i> Fakultas</a></li>
+                <li><a href="#gallery"><i class="fas fa-images"></i> Galeri</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Kontak</a></li>
+                <li><a href="#registration"><i class="fas fa-user-plus"></i> Pendaftaran</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu" onclick="toggleMenu()">☰</button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Institut Teknologi & Bisnis Asia Malang</h1>
+            <p>Menyelenggarakan pendidikan tinggi yang berkualitas dengan fokus pada pengembangan teknologi dan bisnis untuk menciptakan lulusan yang kompeten dan siap bersaing di era global.</p>
+            <div class="hero-buttons">
+                <a href="#faculties" class="btn btn-primary"><i class="fas fa-graduation-cap"></i> Program Studi</a>
+                <a href="#registration" class="btn"><i class="fas fa-user-plus"></i> Pendaftaran</a>
+            </div>
+        </div>
+        <div class="model-container" id="3d-model-container">
+            <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Gedung Kampus ITB Asia Malang" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+    </section>
+
+    <!-- Faculties Section -->
+    <section class="section" id="faculties">
+        <h2 class="section-title">Program Studi</h2>
+        
+        <div class="faculty-tabs">
+            <button class="tab-btn active" onclick="filterPrograms('all')" aria-label="Tampilkan semua program studi">
+                <i class="fas fa-university"></i> Semua Program Studi
+            </button>
+            <button class="tab-btn" onclick="filterPrograms('feb')" aria-label="Tampilkan Fakultas Ekonomi dan Bisnis">
+                <i class="fas fa-chart-line"></i> Fakultas Ekonomi & Bisnis
+            </button>
+            <button class="tab-btn" onclick="filterPrograms('ftd')" aria-label="Tampilkan Fakultas Teknologi dan Desain">
+                <i class="fas fa-laptop-code"></i> Fakultas Teknologi & Desain
+            </button>
+        </div>
+        
+        <div class="programs-grid">
+            <!-- FEB Programs -->
+            <div class="program-card feb" data-faculty="feb">
+                <div class="program-icon">
+                    <i class="fas fa-briefcase"></i>
+                </div>
+                <h3 class="program-title">Manajemen</h3>
+                <p class="program-desc">Program studi yang mempersiapkan mahasiswa untuk menjadi manajer profesional di berbagai bidang bisnis dan organisasi dengan kurikulum berbasis industri.</p>
+                <div class="program-details">
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Gelar: <strong>S.M (Sarjana Manajemen)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Masa Studi: <strong>8 Semester (4 Tahun)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Prospek Karir: Manager, Entrepreneur, Konsultan Bisnis</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-card feb" data-faculty="feb">
+                <div class="program-icon">
+                    <i class="fas fa-calculator"></i>
+                </div>
+                <h3 class="program-title">Akuntansi</h3>
+                <p class="program-desc">Program studi yang menghasilkan lulusan dengan kompetensi di bidang akuntansi keuangan, auditing, dan perpajakan yang siap bersaing di dunia kerja.</p>
+                <div class="program-details">
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Gelar: <strong>S.Ak. (Sarjana Akuntansi)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Masa Studi: <strong>8 Semester (4 Tahun)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Prospek Karir: Akuntan, Auditor, Konsultan Pajak</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-card feb" data-faculty="feb">
+                <div class="program-icon">
+                    <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="program-title">International Business Management (IBM)</h3>
+                <p class="program-desc">Program studi berbasis internasional yang mempersiapkan mahasiswa untuk berkarir di perusahaan multinasional dengan pengantar bahasa Inggris.</p>
+                <div class="program-details">
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Gelar: <strong>S.M. (Sarjana Manajemen)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Masa Studi: <strong>8 Semester (4 Tahun)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Prospek Karir: International Business Manager, Export-Import Specialist</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FTD Programs -->
+            <div class="program-card ftd" data-faculty="ftd">
+                <div class="program-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3 class="program-title">Teknik Informatika</h3>
+                <p class="program-desc">Program studi yang memfokuskan pada pengembangan perangkat lunak, kecerdasan buatan, dan sistem informasi berbasis teknologi terkini.</p>
+                <div class="program-details">
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Gelar: <strong>S.Kom. (Sarjana Komputer)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Masa Studi: <strong>8 Semester (4 Tahun)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Prospek Karir: Software Developer, Data Scientist, IT Consultant</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-card ftd" data-faculty="ftd">
+                <div class="program-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <h3 class="program-title">Sistem Komputer</h3>
+                <p class="program-desc">Program studi yang menggabungkan ilmu komputer dan elektronika untuk pengembangan sistem berbasis komputer dan jaringan.</p>
+                <div class="program-details">
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Gelar: <strong>S.Kom. (Sarjana Komputer)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Masa Studi: <strong>8 Semester (4 Tahun)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Prospek Karir: Network Engineer, System Analyst, IoT Specialist</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="program-card ftd" data-faculty="ftd">
+                <div class="program-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3 class="program-title">Desain Komunikasi Visual (DKV)</h3>
+                <p class="program-desc">Program studi yang memadukan seni visual dengan teknologi untuk menciptakan solusi komunikasi yang efektif dan kreatif.</p>
+                <div class="program-details">
+                    <div class="detail-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Gelar: <strong>S.Ds. (Sarjana Desain)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Masa Studi: <strong>8 Semester (4 Tahun)</strong></span>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Prospek Karir: Graphic Designer, UI/UX Designer, Creative Director</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section" id="gallery" style="background: rgba(100, 255, 218, 0.03);">
+        <h2 class="section-title">Galeri Kampus</h2>
+        
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Gedung Utama Kampus ITB Asia Malang">
+                <div class="gallery-caption">Gedung Utama Kampus ITB Asia Malang</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Belajar di Kelas">
+                <div class="gallery-caption">Kegiatan Belajar di Kelas</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1541178735493-479c1a27ed24?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Laboratorium Komputer">
+                <div class="gallery-caption">Laboratorium Komputer</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Perpustakaan Kampus">
+                <div class="gallery-caption">Perpustakaan Kampus</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1521791055366-0d553872125f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Studio Desain">
+                <div class="gallery-caption">Studio Desain</div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Kegiatan Mahasiswa">
+                <div class="gallery-caption">Kegiatan Mahasiswa</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <h2 class="section-title">Hubungi Kami</h2>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Lokasi Kampus</h3>
+                        <p>Jl. Soekarno Hatta No. 456, Malang, Jawa Timur</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Telepon</h3>
+                        <p>+62 341 1234567</p>
+                        <p>Senin-Jumat, 08:00 - 16:00 WIB</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <p>info@itb-asia.ac.id</p>
+                        <p>pmb@itb-asia.ac.id</p>
+                    </div>
+                </div>
+                
+                <div class="contact-method">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-details">
+                        <h3>Jam Operasional</h3>
+                        <p>Senin-Jumat: 08.00-16.00 WIB</p>
+                        <p>Sabtu: 08.00-12.00 WIB</p>
+                    </div>
+                </div>
+                
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.3141822075867!2d112.6082763152587!3d-7.966446481577693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7882865d069f6f%3A0x1030bfbc9a4b4c20!2sInstitut%20Teknologi%20dan%20Bisnis%20Asia%20Malang!5e0!3m2!1sen!2sid!4v1620000000000!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" required placeholder="Masukkan nama Anda">
+                </div>
+                <div class="form-group">
+                    <label for="email">Alamat Email</label>
+                    <input type="email" id="email" name="email" required placeholder="Masukkan email Anda">
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subjek</label>
+                    <input type="text" id="subject" name="subject" required placeholder="Tentang apa pesan Anda?">
+                </div>
+                <div class="form-group">
+                    <label for="message">Pesan Anda</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Tulis pesan Anda disini..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Kirim Pesan
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section class="section" id="registration" style="background: rgba(100, 255, 218, 0.03);">
+        <h2 class="section-title">Pendaftaran Mahasiswa Baru</h2>
+        
+        <div class="registration-form">
+            <form id="registrationForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reg-name">Nama Lengkap</label>
+                        <input type="text" id="reg-name" name="reg-name" required placeholder="Nama sesuai ijazah">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-email">Email</label>
+                        <input type="email" id="reg-email" name="reg-email" required placeholder="Email aktif">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reg-phone">Nomor HP</label>
+                        <input type="tel" id="reg-phone" name="reg-phone" required placeholder="Nomor yang bisa dihubungi">
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-dob">Tanggal Lahir</label>
+                        <input type="date" id="reg-dob" name="reg-dob" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-address">Alamat Lengkap</label>
+                    <textarea id="reg-address" name="reg-address" rows="3" required placeholder="Alamat sesuai KTP"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="reg-program">Program Studi Pilihan</label>
+                        <select id="reg-program" name="reg-program" required>
+                            <option value="">Pilih Program Studi</option>
+                            <option value="manajemen">Manajemen</option>
+                            <option value="akuntansi">Akuntansi</option>
+                            <option value="ibm">International Business Management (IBM)</option>
+                            <option value="ti">Teknik Informatika</option>
+                            <option value="sk">Sistem Komputer</option>
+                            <option value="dkv">Desain Komunikasi Visual (DKV)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="reg-year">Tahun Angkatan</label>
+                        <select id="reg-year" name="reg-year" required>
+                            <option value="">Pilih Tahun</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="reg-motivation">Motivasi Kuliah di ITB Asia Malang</label>
+                    <textarea id="reg-motivation" name="reg-motivation" rows="4" placeholder="Ceritakan motivasi Anda (min. 100 karakter)"></textarea>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="reg-agree" name="reg-agree" required>
+                    <label for="reg-agree">Saya menyetujui syarat dan ketentuan pendaftaran</label>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i> Daftar Sekarang
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="copyright">Gilang Dwi Hermawan - 242012253 - Interaksi Manusia & Komputer - Institut Teknologi & Bisnis Asia Malang ©.</p>
+    </footer>
+
+    <!-- Accessibility Panel -->
+    <div class="accessibility-panel">
+        <button class="accessibility-btn" id="highContrastBtn" aria-label="Toggle High Contrast Mode" onclick="toggleHighContrast()">
+            <i class="fas fa-adjust"></i>
+            <span>Kontras Tinggi</span>
+        </button>
+        <button class="accessibility-btn" id="largeTextBtn" aria-label="Toggle Large Text Mode" onclick="toggleLargeText()">
+            <i class="fas fa-text-height"></i>
+            <span>Teks Besar</span>
+        </button>
+        <button class="accessibility-btn" id="voiceControlBtn" aria-label="Enable Voice Control" onclick="enableVoiceControl()">
+            <i class="fas fa-microphone"></i>
+            <span>Kontrol Suara</span>
+        </button>
+        <button class="accessibility-btn" id="resetAccessibilityBtn" aria-label="Reset Accessibility Settings" onclick="resetAccessibility()">
+            <i class="fas fa-undo"></i>
+            <span>Reset</span>
+        </button>
+    </div>
+
+    <!-- Modal for Image Gallery -->
+    <div class="modal" id="galleryModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <img id="modalImage" src="" alt="" style="width: 100%; max-height: 80vh; object-fit: contain;">
+            <p id="modalCaption" style="text-align: center; margin-top: 1rem;"></p>
+        </div>
+    </div>
+
+    <!-- Three.js for 3D Model -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.min.js"></script>
+</body>
+</html>
